@@ -1,4 +1,4 @@
-# HUIT Academic Technology Jupyterhub user docuentation
+# HUIT Academic Technology Jupyterhub user documentation
 
 This repository contains the source files for the HUIT Academic Technology JupyterHub user documentation, powered by [mkdocs](https://www.mkdocs.org/) and the [mkdocs-material](https://squidfunk.github.io/mkdocs-material/) theme.
 
