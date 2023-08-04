@@ -4,6 +4,9 @@ nav:
   - Home: index.md
   - Getting Started: getting-started.md
   - JupyterLab: jupyterlab.md
+  - Adding Packages: adding-packages.md
+  - Teaching Staff Access: teaching-staff-access.md
+  - Troubleshooting: troubleshooting.md
 
 theme:
   name: material
