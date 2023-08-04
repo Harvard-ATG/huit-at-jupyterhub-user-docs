@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../getting-started/">
+        <link rel="prev" href="../jupyterlab/">
       
       
-        <link rel="next" href="../adding-packages/">
+        <link rel="next" href="../teaching-staff-access/">
       
       <link rel="icon" href="../assets/favicon.ico">
       <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
     
     
       
-        <title>JupyterLab - HUIT Academic Technology JupyterHub User Documentation</title>
+        <title>Adding Packages - HUIT Academic Technology JupyterHub User Documentation</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#jupyterlab-general-documentation" class="md-skip">
+        <a href="#adding-packages" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              JupyterLab
+              Adding Packages
             
           </span>
         </div>
@@ -218,6 +218,21 @@
 
   
   
+  
+    <li class="md-nav__item">
+      <a href="../jupyterlab/" class="md-nav__link">
+        JupyterLab
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
     
   
   
@@ -229,25 +244,48 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Adding Packages
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
-        JupyterLab
-      </a>
-      
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../adding-packages/" class="md-nav__link">
         Adding Packages
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-a-local-environment" class="md-nav__link">
+    Configuring a Local Environment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-new-kernel" class="md-nav__link">
+    Using the New Kernel
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -302,6 +340,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-a-local-environment" class="md-nav__link">
+    Configuring a Local Environment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-new-kernel" class="md-nav__link">
+    Using the New Kernel
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -315,12 +375,30 @@
                   
 
 
-<h1 id="jupyterlab-general-documentation">JupyterLab General documentation</h1>
+<h1 id="adding-packages">Adding Packages</h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This documentation site is a work in progress, and is being tested and refined internally. Do not use this documentation as a reference in its current state.</p>
 </div>
-<p>Our JupyterHub service uses the JupyterLab interface. The main <a href="https://jupyterlab.readthedocs.io/en/latest/">JupyterLab documentation</a> is an excellent resource on the interface, and teaching staff may want to direct students to particular portions of the documentation for an overview of how to perform tasks related to their coursework.</p>
+<p>Our Python configuration is based on the <a href="https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-scipy-notebook">Jupyter scipy notebook</a> stack, which includes many of the most common packages for use in data collection and analysis in Python. In addition, instructors can request a customized environment with specific packages pre-installed for use in a course.</p>
+<p>However, there may still be cases where you want to install additional packages in this environment. In this JupyterHub configuration, every time you start your server, a new AWS server resource is allocated to run that server using the default configuration for your course. That means that any additional modules must be configured from your persistent home directory, rather than elsewhere on the system, which is being replaced regularly.</p>
+<p>To configure packages locally, you will need to first create a local environment in your home directory using <code>mamba</code>. Then, you will need to register that environment with ipython to use it as a kernel in your JupyterLab environment.</p>
+<h2 id="configuring-a-local-environment">Configuring a Local Environment</h2>
+<p>Configuring a local environment will require use of the terminal in JupyterLab. To configure such an environment, use the commands below. Comments have been added with additional instructions. Where you see "environmentName", you can replace it with a folder name that you prefer to use. This will be the folder that contains the environment in your home directory. You can also replace "DisplayName" with a preferred name for your environment as it appears in the JupyterLab interface. You can use the same name as your folder name, just know that the two are not necessarily related. Neither the folder name nor the display name should contain spaces.</p>
+<div class="highlight"><pre><span></span><code>mamba<span class="w"> </span>create<span class="w"> </span>--prefix<span class="w"> </span>./environmentName
+mamba<span class="w"> </span>init
+<span class="c1"># close and re-open the terminal</span>
+mamba<span class="w"> </span>activate<span class="w"> </span>./environmentName
+mamba<span class="w"> </span>install<span class="w"> </span>ipykernel
+<span class="c1"># install other packages with mamba install</span>
+ipython<span class="w"> </span>kernel<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>--name<span class="o">=</span>DisplayName
+</code></pre></div>
+<h2 id="using-the-new-kernel">Using the New Kernel</h2>
+<p>Once you have run these commands successfully, you should see a new option with the same name that you used for "DisplayName" when launching a new notebook. To use the new environment in an existing notebook, open that notebook, then click on the current kernel name in the top right (the default is "Python3 (ipykernel)"). This will bring up a pop-up with a dropdown menu where you can change the kernel to match your new environment. After doing this, you should restart your notebook's kernel from the "Kernel" menu at the top of the page.</p>
+<p>Once you have your environment configured, you can add more packages to it by activating it, then using <code>mamba install</code> to configure more packages, like so:</p>
+<div class="highlight"><pre><span></span><code>mamba<span class="w"> </span>activate<span class="w"> </span>./environmentName
+mamba<span class="w"> </span>install<span class="w"> </span>numpy<span class="w"> </span>pandas<span class="w"> </span>matplotlib
+</code></pre></div>
 
 
 

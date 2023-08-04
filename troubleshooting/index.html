@@ -9,17 +9,15 @@
       
       
       
-        <link rel="prev" href="../getting-started/">
+        <link rel="prev" href="../teaching-staff-access/">
       
-      
-        <link rel="next" href="../adding-packages/">
       
       <link rel="icon" href="../assets/favicon.ico">
       <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
     
     
       
-        <title>JupyterLab - HUIT Academic Technology JupyterHub User Documentation</title>
+        <title>Troubleshooting - HUIT Academic Technology JupyterHub User Documentation</title>
       
     
     
@@ -69,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#jupyterlab-general-documentation" class="md-skip">
+        <a href="#troubleshooting" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              JupyterLab
+              Troubleshooting
             
           </span>
         </div>
@@ -218,21 +216,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../jupyterlab/" class="md-nav__link">
         JupyterLab
       </a>
-      
     </li>
   
 
@@ -273,11 +261,52 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../troubleshooting/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Troubleshooting
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Troubleshooting
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-should-i-do-if-my-notebook-is-hangingnon-responsive" class="md-nav__link">
+    What should I do if my notebook is hanging/non-responsive?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -302,6 +331,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-should-i-do-if-my-notebook-is-hangingnon-responsive" class="md-nav__link">
+    What should I do if my notebook is hanging/non-responsive?
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -315,12 +359,13 @@
                   
 
 
-<h1 id="jupyterlab-general-documentation">JupyterLab General documentation</h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This documentation site is a work in progress, and is being tested and refined internally. Do not use this documentation as a reference in its current state.</p>
-</div>
-<p>Our JupyterHub service uses the JupyterLab interface. The main <a href="https://jupyterlab.readthedocs.io/en/latest/">JupyterLab documentation</a> is an excellent resource on the interface, and teaching staff may want to direct students to particular portions of the documentation for an overview of how to perform tasks related to their coursework.</p>
+<h1 id="troubleshooting">Troubleshooting</h1>
+<h2 id="what-should-i-do-if-my-notebook-is-hangingnon-responsive">What should I do if my notebook is hanging/non-responsive?</h2>
+<ul>
+<li>First try to restart your Jupyter Kernel. From your notebook, go to Kernel &gt; Shutdown and confirm by clicking the Shutdown button. Then click on Kernel &gt; Restart Kernel...</li>
+<li>If restarting your kernel did not resolve the problem, try restarting your Jupyter server. Go to your JupyterHub home page via File &gt; Hub Control Panel. From there, you can click on the "Stop My Server" button. Wait a minute or two for your server to completely stop and then click Start My Server.</li>
+<li>If restarting your kernel or server did not resolve the problem, contact your instructor or other course staff. If you are course staff, or cannont resolve the issue with their help, reach out to atg@fas.harvard.edu for assistance.</li>
+</ul>
 
 
 

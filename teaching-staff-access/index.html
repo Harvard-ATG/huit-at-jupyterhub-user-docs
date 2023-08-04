@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../getting-started/">
+        <link rel="prev" href="../adding-packages/">
       
       
-        <link rel="next" href="../adding-packages/">
+        <link rel="next" href="../troubleshooting/">
       
       <link rel="icon" href="../assets/favicon.ico">
       <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
     
     
       
-        <title>JupyterLab - HUIT Academic Technology JupyterHub User Documentation</title>
+        <title>Teaching Staff Access - HUIT Academic Technology JupyterHub User Documentation</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#jupyterlab-general-documentation" class="md-skip">
+        <a href="#teaching-staff-access-to-jupyterhub" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              JupyterLab
+              Teaching Staff Access
             
           </span>
         </div>
@@ -218,21 +218,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../jupyterlab/" class="md-nav__link">
         JupyterLab
       </a>
-      
     </li>
   
 
@@ -258,11 +248,66 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../teaching-staff-access/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Teaching Staff Access
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Teaching Staff Access
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#jupyterhub-usernames" class="md-nav__link">
+    JupyterHub Usernames
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managing-student-servers" class="md-nav__link">
+    Managing Student Servers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managing-the-hub" class="md-nav__link">
+    Managing the Hub
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -302,6 +347,35 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#jupyterhub-usernames" class="md-nav__link">
+    JupyterHub Usernames
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managing-student-servers" class="md-nav__link">
+    Managing Student Servers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managing-the-hub" class="md-nav__link">
+    Managing the Hub
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -315,12 +389,15 @@
                   
 
 
-<h1 id="jupyterlab-general-documentation">JupyterLab General documentation</h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This documentation site is a work in progress, and is being tested and refined internally. Do not use this documentation as a reference in its current state.</p>
-</div>
-<p>Our JupyterHub service uses the JupyterLab interface. The main <a href="https://jupyterlab.readthedocs.io/en/latest/">JupyterLab documentation</a> is an excellent resource on the interface, and teaching staff may want to direct students to particular portions of the documentation for an overview of how to perform tasks related to their coursework.</p>
+<h1 id="teaching-staff-access-to-jupyterhub">Teaching Staff Access to JupyterHub</h1>
+<p>Instructors and TAs/TFs have access to admin tools in JupyterHub to help students with their environments. The Admin interface can be accessed from the JupyterHub homepage, visible when JupyterHub is first launched from Canvas. If a member of course staff has already started their server and entered a JupyterLab environment, they can get back to the JupyterHub homepage through File -&gt; Hub Control Panel at the top of the page.</p>
+<h2 id="jupyterhub-usernames">JupyterHub Usernames</h2>
+<p>In the Admin panel, you will see a list of student servers. The usernames in JupyterHub come from unique user IDs in Canvas, which are distinct from other identifiers like HUIDs or netIDs. To find the Canvas user ID for a student, find them in the list of people on the Canvas "People" page and click on their name you should be taken to a profile page for the student. If a sidebar pops up on the right, click the student's name in the sidebar to get to this profile page. The number at the end of the url for this page is the student's Canvas ID, which is also their username in JupyterHub. That url will look similar to this: <code>https://canvas.harvard.edu/courses/&lt;course_id&gt;/users/&lt;user_id&gt;</code>. If you use Safari, you may have to click in to the URL bar to see the full url of the page.</p>
+<h2 id="managing-student-servers">Managing Student Servers</h2>
+<p>Once you have identified the student whose server you want to troubleshoot, you can access their server with the "Access Server" button in the row with their username. This will give you access to their running server, where you can directly view their files and notebooks and interact with their environment.</p>
+<p>You can also stop their server if it is not responding and they are having difficulty stopping it themselves. They will be able to launch a fresh server once their server has stopped.</p>
+<h2 id="managing-the-hub">Managing the Hub</h2>
+<p>The "Start All", "Stop All", and "Shutdown Hub" buttons should not be used by course staff. These will affect the entire JupyterHub setup for the course, and may have effects that course staff will be unable to undo. If there is an issue affectign the entire course setup, please reach out to <a href="mailto:atg@fas.harvard.edu">atg@fas.harvard.edu</a> so that we can address the issue. If an issue is affecting an entire course, there is likely a problem with a system that course staff do not have access to, and developers within Academic Technology will need to diagnose and address the issue.</p>
 
 
 
