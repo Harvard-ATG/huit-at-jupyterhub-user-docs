@@ -10,6 +10,7 @@ theme:
   palette:
     scheme: harvard
   logo: assets/harvard_shield.svg
+  favicon: assets/favicon.ico
 
 extra_css:
   - stylesheets/extra.css
