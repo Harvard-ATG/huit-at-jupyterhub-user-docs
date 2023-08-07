@@ -1,5 +1,8 @@
 # Teaching Staff Access to JupyterHub
 
+!!! warning
+    This documentation site is a work in progress, and is being tested and refined internally. Do not use this documentation as a reference in its current state.
+
 Instructors and TAs/TFs have access to admin tools in JupyterHub to help students with their environments. The Admin interface can be accessed from the JupyterHub homepage, visible when JupyterHub is first launched from Canvas. If a member of course staff has already started their server and entered a JupyterLab environment, they can get back to the JupyterHub homepage through File -> Hub Control Panel at the top of the page.
 
 ## JupyterHub Usernames
