@@ -1,8 +1,5 @@
 # Troubleshooting
 
-!!! warning
-    This documentation site is a work in progress, and is being tested and refined internally. Do not use this documentation as a reference in its current state.
-
 ## What should I do if my notebook is hanging/non-responsive?
 * First try to restart your Jupyter Kernel. From your notebook, go to Kernel > Shutdown and confirm by clicking the Shutdown button. Then click on Kernel > Restart Kernel...
 * If restarting your kernel did not resolve the problem, try restarting your Jupyter server. Go to your JupyterHub home page via File > Hub Control Panel. From there, you can click on the "Stop My Server" button. Wait a minute or two for your server to completely stop and then click Start My Server.

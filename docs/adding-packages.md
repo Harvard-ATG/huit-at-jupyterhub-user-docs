@@ -1,8 +1,5 @@
 # Adding Packages
 
-!!! warning
-    This documentation site is a work in progress, and is being tested and refined internally. Do not use this documentation as a reference in its current state.
-
 Our Python configuration is based on the [Jupyter scipy notebook](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-scipy-notebook) stack, which includes many of the most common packages for use in data collection and analysis in Python. In addition, instructors can request a customized environment with specific packages pre-installed for use in a course.
 
 However, there may still be cases where you want to install additional packages in this environment. In this JupyterHub configuration, every time you start your server, a new AWS server resource is allocated to run that server using the default configuration for your course. That means that any additional modules must be configured from your persistent home directory, rather than elsewhere on the system, which is being replaced regularly.
