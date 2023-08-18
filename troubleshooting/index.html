@@ -303,6 +303,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#when-i-try-to-save-i-get-an-invalid-response-403-error" class="md-nav__link">
+    When I try to save, I get an "Invalid response: 403" error
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-importing-matplotlib-i-get-an-error-about-a-cache-directory" class="md-nav__link">
+    When importing matplotlib, I get an error about a cache directory
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -344,6 +358,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#when-i-try-to-save-i-get-an-invalid-response-403-error" class="md-nav__link">
+    When I try to save, I get an "Invalid response: 403" error
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-importing-matplotlib-i-get-an-error-about-a-cache-directory" class="md-nav__link">
+    When importing matplotlib, I get an error about a cache directory
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -360,16 +388,30 @@
 
 
 <h1 id="troubleshooting">Troubleshooting</h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This documentation site is a work in progress, and is being tested and refined internally. Do not use this documentation as a reference in its current state.</p>
-</div>
 <h2 id="what-should-i-do-if-my-notebook-is-hangingnon-responsive">What should I do if my notebook is hanging/non-responsive?</h2>
 <ul>
 <li>First try to restart your Jupyter Kernel. From your notebook, go to Kernel &gt; Shutdown and confirm by clicking the Shutdown button. Then click on Kernel &gt; Restart Kernel...</li>
 <li>If restarting your kernel did not resolve the problem, try restarting your Jupyter server. Go to your JupyterHub home page via File &gt; Hub Control Panel. From there, you can click on the "Stop My Server" button. Wait a minute or two for your server to completely stop and then click Start My Server.</li>
 <li>If restarting your kernel or server did not resolve the problem, contact your instructor or other course staff. If you are course staff, or cannont resolve the issue with their help, reach out to atg@fas.harvard.edu for assistance.</li>
 </ul>
+<h2 id="when-i-try-to-save-i-get-an-invalid-response-403-error">When I try to save, I get an "Invalid response: 403" error</h2>
+<p><strong>Symptoms:</strong> This error accompanies other problems like disappearing text in cells, and the error message popping up on its own. The best way to verify is to try to save a file and see if you see the text "Invalid response: 403".</p>
+<p><strong>Solution:</strong> This indicates a networking issue that needs to be resolved by the developers that maintain the JupyterHub configuration. The problem is usually specific to a single file, or triggered by trying to save certain code. To help us fix this issue as quickly as possible, please send a message to <a href="mailto:atg@fas.harvard.edu">atg@fas.harvard.edu</a> with your name, what class you are using JupyterHub in, and the name of the file that you were editing when the error occurred.</p>
+<p>We have only observed this error in Safari and Chrome, so using Firefox may be a way to continue working in the meantime.</p>
+<p>We have also observed that once the file stops saving, the download option in JupyterLab will no longer reflect current changes. To back up the work you have done, you will need to copy the most recently edited cells into another text file. Since this error prevents files from being saved, we recommend stopping work in a notebook where this error occurs as soon as you see it, as any work you do after encountering it is likely to be lost.</p>
+<h2 id="when-importing-matplotlib-i-get-an-error-about-a-cache-directory">When importing matplotlib, I get an error about a cache directory</h2>
+<p><strong>Symptoms:</strong> When importing <code>matplotlib.pyplot</code>, as in via the following code,</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</code></pre></div>
+<p>you may encounter an error like this:</p>
+<blockquote>
+<p><code>Matplotlib created a temporary config/cache directory at /tmp/matplotlib-nj9ket54 because the default path (/home/jovyan/.cache/matplotlib) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.</code></p>
+</blockquote>
+<p><strong>Solution:</strong> The library will still work, but may not perform as well. To fix this, add the following code to notebooks before importing <code>matplotlib.pyplot</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;MPLCONFIGDIR&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s2">&quot;.cache/matplotlib&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>This will configure <code>matplotlib</code> to use a cache directory in your own home directory, where it won't have any trouble writing whatever it needs to. You may not need the <code>import os</code> if you've already imported it.</p>
 
 
 
