@@ -4,7 +4,14 @@ Instructors and TAs/TFs have access to admin tools in JupyterHub to help student
 
 ## JupyterHub Usernames
 
-In the Admin panel, you will see a list of student servers. The usernames in JupyterHub come from unique user IDs in Canvas, which are distinct from other identifiers like HUIDs or netIDs. To find the Canvas user ID for a student, find them in the list of people on the Canvas "People" page and click on their name you should be taken to a profile page for the student. If a sidebar pops up on the right, click the student's name in the sidebar to get to this profile page. The number at the end of the url for this page is the student's Canvas ID, which is also their username in JupyterHub. That url will look similar to this: `https://canvas.harvard.edu/courses/<course_id>/users/<user_id>`. If you use Safari, you may have to click in to the URL bar to see the full url of the page.
+In the Admin panel, you will see a list of student servers. The usernames in JupyterHub come from unique user IDs in Canvas, which are distinct from other identifiers like HUIDs or netIDs. Any user in JupyterHub can see their user ID in the top right corner of the JupyterHub interface. 
+
+To find the Canvas user ID for a student outside of JupyterHub, find them in the list of people on the Canvas "People" page and click on their name you should be taken to a profile page for the student. If a sidebar pops up on the right, click the student's name in the sidebar to get to this profile page. The number at the end of the url for this page is the student's Canvas ID, which is also their username in JupyterHub. That url will look similar to this: `https://canvas.harvard.edu/courses/<course_id>/users/<user_id>`. If you use Safari, you may have to click in to the URL bar to see the full url of the page.
+
+!!!warning
+    **Do not change JupyterHub usernames**
+
+Admins have permission to change usernames in the admin dashboard, but doing so will break access for that user. The numeric user names are used in the authentication process, so changing them will result in a new user being created and permissions errors server-side when launching Jupyterhub, preventing the launch from completing successfully.
 
 ## Managing Student Servers
 
