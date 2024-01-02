@@ -325,6 +325,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#making-the-shared-folder-more-visible" class="md-nav__link">
+    Making the Shared Folder More Visible
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -373,6 +380,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#making-the-shared-folder-more-visible" class="md-nav__link">
+    Making the Shared Folder More Visible
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -404,6 +418,15 @@ chmod<span class="w"> </span>-R<span class="w"> </span>o+r<span class="w"> </spa
 <span class="c1"># Ensure that folders work properly for everyone</span>
 chmod<span class="w"> </span>-R<span class="w"> </span>go+X<span class="w"> </span>.
 </code></pre></div>
+<h2 id="making-the-shared-folder-more-visible">Making the Shared Folder More Visible</h2>
+<p>The shared folder is located at <code>/home/course_data</code>. This is parallel to user home directories, so any user can access it through the termial at <code>../course_data</code>. However, it does not appear in the user interface for JupyterHub. To make it appear in the interface, you can create a link in your home directory.</p>
+<p>To create the link, start from your home directory, <code>cd ~</code>. Then, create a symbolic link in your home dir with <code>ln -s /home/course_data ~/course_data</code>. If you've created the link successfully, when you run <code>ls -l</code> you should see the link listed, with the entry for the link looking something like this:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-l
+...
+lrwxrwxrwx<span class="w"> </span><span class="m">1</span><span class="w"> </span>u_000000<span class="w"> </span>g_000000<span class="w"> </span><span class="m">17</span><span class="w"> </span>Jan<span class="w">  </span><span class="m">2</span><span class="w"> </span><span class="m">17</span>:00<span class="w"> </span>course_data<span class="w"> </span>-&gt;<span class="w"> </span>/home/course_data
+...
+</code></pre></div>
+<p>Now the shared folder will appear in your home directory like any other folder, even though it is in a shared location. You only have to do this once, since the link persists in your home directory.</p>
 
 
 
