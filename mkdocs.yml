@@ -7,6 +7,7 @@ nav:
   - Adding Packages: adding-packages.md
   - Teaching Staff Access: teaching-staff-access.md
   - Troubleshooting: troubleshooting.md
+  - (Advanced) Shared Folder: shared-folder.md
 
 theme:
   name: material
