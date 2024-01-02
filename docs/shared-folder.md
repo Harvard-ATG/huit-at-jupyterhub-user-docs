@@ -24,3 +24,18 @@ chmod -R o+r .
 # Ensure that folders work properly for everyone
 chmod -R go+X .
 ```
+
+## Making the Shared Folder More Visible
+
+The shared folder is located at `/home/course_data`. This is parallel to user home directories, so any user can access it through the termial at `../course_data`. However, it does not appear in the user interface for JupyterHub. To make it appear in the interface, you can create a link in your home directory.
+
+To create the link, start from your home directory, `cd ~`. Then, create a symbolic link in your home dir with `ln -s /home/course_data ~/course_data`. If you've created the link successfully, when you run `ls -l` you should see the link listed, with the entry for the link looking something like this:
+
+```bash
+$ ls -l
+...
+lrwxrwxrwx 1 u_000000 g_000000 17 Jan  2 17:00 course_data -> /home/course_data
+...
+```
+
+Now the shared folder will appear in your home directory like any other folder, even though it is in a shared location. You only have to do this once, since the link persists in your home directory.
